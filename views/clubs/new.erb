@@ -1,0 +1,49 @@
+<h3>Add new Club's name</h3>
+
+<form action="/clubs" method="post">
+  <label for="name-field">Name:</label>
+  <input
+  type="text"
+  name="name"
+  value=""
+  />
+
+<label for="type-field">Type:</label>
+  <input
+  type="text"
+  name="type"
+  value=""
+/>
+
+  <!-- <label for="manufacturer_id-field">Manufacturer:</label> -->
+  <!-- <input
+  type="number"
+  name="manufacturer_id"
+  value=""
+  /> -->
+<label>
+  Manufacturer:
+  <select name="manufacturer_id">
+    <% for manufacturer in @manufacturers %>
+    <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+    <% end %>
+  </select>
+</label>
+
+<label for="quantity-field">Quantity:</label>
+  <input
+  type="number"
+  name="quantity"
+  value=""
+/>
+
+<label for="stock_level-field">Stock Level</label>
+  <input
+  type="text"
+  name="stock_level"
+  value=""
+/>
+
+<input type="submit" value="Add new">
+
+</form>

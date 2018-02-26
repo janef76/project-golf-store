@@ -1,0 +1,4 @@
+<h2>All Clubs</h2>
+<% for club in @clubs %>
+<p> <%= club.name %> <%= club.type %> <%= Manufacturer.manufacturer_name(club.manufacturer_id) %> <%= club.quantity %> <%= club.stock_level %> </p>
+<% end %>

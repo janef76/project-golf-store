@@ -66,6 +66,13 @@ class Manufacturer
     SqlRunner.run(sql)
   end
 
+  def self.manufacturer_name(id)
+    sql = "SELECT name FROM manufacturers WHERE id = #{id};"
+    results = SqlRunner.run(sql)[0]['name']
+    return results
+  end
+
+
   def self.map_items(manufacturer_data)
     return manufacturer_data.map {|make| Manufacturer.new(make)}
   end
