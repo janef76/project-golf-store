@@ -10,8 +10,18 @@ class Club
     @name = options['name']
     @type = options['type']
     @manufacturer_id = options['manufacturer_id'].to_i
-    @quantity = options['quantity']
+    @quantity = options['quantity'].to_i
     @stock_level = options['stock_level']
+  end
+
+  def level_indicator()
+    if @quantity <= 10
+      return "low"
+    elsif @quantity > 10 && @quantity <= 20
+      return "med"
+    else
+      return "high"
+    end
   end
 
   def save()
