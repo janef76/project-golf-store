@@ -1,0 +1,5 @@
+<p>Club: <%= @clubs.name %> </p>
+
+<form method="post" action="/clubs/<%= @clubs.id %>/delete">
+<input type="submit" value="Delete Club"/>
+</form>

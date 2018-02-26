@@ -1,5 +1,10 @@
 <h2>All Clubs</h2>
 
+
+<li>
+  <a href="/clubs/new">Add new Club</a>
+</li>
+
 <table>
   <tr>
     <th>Club Name</th>
@@ -7,6 +12,7 @@
     <th>Manufacturer Name</th>
     <th>Quantity</th>
     <th>Stock Indicator</th>
+    <th>Delete</th>
   </tr>
 
 <% for club in @clubs %>
@@ -16,6 +22,7 @@
 <td><%= Manufacturer.manufacturer_name(club.manufacturer_id) %></td>
 <td><%= club.quantity %></td>
 <td><%= club.level_indicator %></td>
+<td><a href="/clubs/<%= club.id %>">Click Here</a></td>
   </tr>
 
 <!-- <p> <%= club.name %> <%= club.type %> <%= Manufacturer.manufacturer_name(club.manufacturer_id) %> <%= club.quantity %> <%= club.level_indicator %> </p> -->

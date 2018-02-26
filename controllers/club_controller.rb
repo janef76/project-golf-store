@@ -20,3 +20,14 @@ post '/clubs' do
   club.save()
   redirect to(:"clubs/index")
 end
+
+get '/clubs/:id' do
+  @clubs = Club.find(params[:id])
+  erb(:"clubs/show")
+end
+
+post '/clubs/:id/delete' do
+  club = Club.find(params[:id])
+  club.delete()
+  redirect to (:"/clubs/index")
+end

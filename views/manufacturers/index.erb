@@ -1,5 +1,20 @@
 <h2>Manufacturers</h2>
+
+<li>
+  <a href="/manufacturers/new">Add new Manufacturer</a>
+</li>
+
+<table>
+  <tr>
+    <th>Manufacturers Name</th>
+    <th>Update/Delete</th>
+  </tr>
+
 <% for manufacturer in @manufacturers %>
-<p><%= manufacturer.name %> </p>
-<p><a href="/manufacturers/<%= manufacturer.id %>">Show Name</a></p>
+<tr>
+<td><%= manufacturer.name %> </td>
+<td><a href="/manufacturers/<%= manufacturer.id %>">Click Here</a></td>
+</tr>
+
 <% end %>
+</table>
