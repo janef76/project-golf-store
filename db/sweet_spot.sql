@@ -10,7 +10,7 @@ CREATE TABLE clubs (
 id SERIAL4 PRIMARY KEY,
 name VARCHAR(255),
 type VARCHAR(255),
-manufacturer_id INT4 REFERENCES manufacturers(id),
+manufacturer_id INT4 REFERENCES manufacturers(id) ON DELETE CASCADE,
 quantity INT4,
 stock_level VARCHAR(255)
 );

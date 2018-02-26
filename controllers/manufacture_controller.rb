@@ -18,3 +18,25 @@ post '/manufacturers' do
   manufacturer.save
   redirect to(:"/manufacturers/index")
 end
+
+get '/manufacturers/:id' do
+  @manufacturers = Manufacturer.find( params[:id] )
+  erb(:"/manufacturers/show")
+end
+
+get '/manufacturers/:id/edit' do
+  @manufacturers = Manufacturer.find( params[:id] )
+  erb(:"/manufacturers/edit")
+end
+
+post '/manufacturers/:id/delete' do
+  manufacturer = Manufacturer.find( params[:id] )
+  manufacturer.delete()
+  redirect to (:"/manufacturers/index")
+end
+
+post '/manufacturers/:id/edit' do
+  manufacturer = Manufacturer.new( params)
+  manufacturer.update()
+  redirect to (:"/manufacturers/index")
+end

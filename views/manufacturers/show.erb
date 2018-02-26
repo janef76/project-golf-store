@@ -1,0 +1,7 @@
+<p>Manufacturer: <%= @manufacturers.name %></p>
+
+<form method="post" action="/manufacturers/<%= @manufacturers.id %>/delete">
+  <input type="submit" value="Delete Manufacturer"/>
+</form>
+
+<a href="/manufacturers/<%= @manufacturers.id %>/edit">Edit</a>

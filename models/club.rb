@@ -15,7 +15,7 @@ class Club
   end
 
   def level_indicator()
-    if @quantity <= 10
+    if @quantity > 0 && @quantity <= 10
       return "low"
     elsif @quantity > 10 && @quantity <= 20
       return "med"

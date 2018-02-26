@@ -1,4 +1,5 @@
 <h2>Manufacturers</h2>
 <% for manufacturer in @manufacturers %>
 <p><%= manufacturer.name %> </p>
+<p><a href="/manufacturers/<%= manufacturer.id %>">Show Name</a></p>
 <% end %>
