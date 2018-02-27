@@ -26,9 +26,10 @@ class Club
       return "high"
     end
   end
-  # 
-  # def mark_up_value()
-  # end
+
+  def mark_up_value()
+    @mark_up = @sell_price - @buy_price
+  end
 
   def save()
     sql = "INSERT INTO clubs
@@ -54,22 +55,17 @@ class Club
 
   def update()
     sql = "UPDATE clubs SET
-    (id,
-    name,
-    type,
-    manufacturer_id,
+    (
     quantity,
-    stock_level,
     buy_price,
-    sell_price,
-    mark_up
+    sell_price
     )
     =
     (
-    $1, $2, $3, $4, $5, $6, $7, $8, $9
+    $1, $2, $3
     )
-    WHERE id = $10"
-    values = [@name, @type, @manufacturer_id, @quantity, @stock_level, @buy_price, @sell_price, @mark_up, @id]
+    WHERE id = $4"
+    values = [@quantity, @buy_price, @sell_price, @id]
     SqlRunner.run(sql, values)
   end
 

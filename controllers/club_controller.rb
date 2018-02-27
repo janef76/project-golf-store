@@ -26,8 +26,19 @@ get '/clubs/:id' do
   erb(:"clubs/show")
 end
 
+get '/clubs/:id/edit' do
+  @clubs = Club.find(params[:id])
+  erb(:"/clubs/edit")
+end
+
 post '/clubs/:id/delete' do
   club = Club.find(params[:id])
   club.delete()
+  redirect to (:"/clubs/index")
+end
+
+post '/clubs/:id/edit' do
+  club = Club.new(params)
+  club.update()
   redirect to (:"/clubs/index")
 end
