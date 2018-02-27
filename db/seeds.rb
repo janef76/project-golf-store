@@ -31,32 +31,6 @@ manu4 = Manufacturer.new({
 
 manu4.save()
 
-club1 = Club.new({
-  "name" => "M1 driver",
-  "type" => "driver",
-  "manufacturer_id" => manu1.id,
-  "quantity" => 10,
-  "stock_level" => "med",
-  "buy_price" => 100,
-  "sell_price" => 150,
-  "mark_up" => 50
-  })
-
-club1.save()
-
-club2 = Club.new({
-  "name" => "M2 driver",
-  "type" => "driver",
-  "manufacturer_id" => manu1.id,
-  "quantity" => 20,
-  "stock_level" => "high",
-  "buy_price" => 200,
-  "sell_price" => 350,
-  "mark_up" => 100
-  })
-
-club2.save()
-
 type1 = Type.new({
     "name" => "driver"
 })
@@ -74,6 +48,33 @@ type3 = Type.new({
 })
 
 type3.save()
+
+club1 = Club.new({
+  "name" => "M1 driver",
+  "type_id" => type1.id,
+  "manufacturer_id" => manu1.id,
+  "quantity" => 10,
+  "stock_level" => "med",
+  "buy_price" => 100,
+  "sell_price" => 150,
+  "mark_up" => 50
+  })
+
+club1.save()
+
+club2 = Club.new({
+  "name" => "M2 driver",
+  "type_id" => type1.id,
+  "manufacturer_id" => manu1.id,
+  "quantity" => 20,
+  "stock_level" => "high",
+  "buy_price" => 200,
+  "sell_price" => 350,
+  "mark_up" => 100
+  })
+
+club2.save()
+
 
 binding.pry
 nil

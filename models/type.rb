@@ -61,7 +61,7 @@ class Type
     SqlRunner.run(sql)
   end
 
-  def self.manufacturer_name(id)
+  def self.type_name(id)
     sql = "SELECT name FROM types WHERE id = #{id};"
     results = SqlRunner.run(sql)[0]['name']
     return results

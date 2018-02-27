@@ -4,6 +4,7 @@ require('pry-byebug')
 
 require_relative('../models/club.rb')
 require_relative('../models/manufacturer.rb')
+require_relative('../models/type.rb')
 
 get '/clubs/index' do
   @clubs = Club.all()
@@ -12,6 +13,7 @@ end
 
 get '/clubs/new' do
   @manufacturers = Manufacturer.all()
+  @types = Type.all()
   erb(:"clubs/new")
 end
 
@@ -24,6 +26,7 @@ end
 get '/clubs/:id' do
   @clubs = Club.find(params[:id])
   @manufacturers = Manufacturer.all()
+  @types = Type.all()
   erb(:"clubs/edit")
 end
 

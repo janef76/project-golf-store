@@ -8,14 +8,14 @@ name VARCHAR(255)
 );
 
 CREATE TABLE types (
-  id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+id SERIAL4 PRIMARY KEY,
+name VARCHAR(255)
 );
 
 CREATE TABLE clubs (
 id SERIAL4 PRIMARY KEY,
 name VARCHAR(255),
-type VARCHAR(255),
+type_id INT4 REFERENCES types(id) ON DELETE CASCADE,
 manufacturer_id INT4 REFERENCES manufacturers(id) ON DELETE CASCADE,
 quantity INT4,
 stock_level VARCHAR(255),

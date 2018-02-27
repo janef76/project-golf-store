@@ -9,12 +9,14 @@
   value=""
   />
 
-<label for="type-field">Type:</label>
-  <input
-  type="text"
-  name="type"
-  value=""
-/>
+<label>
+  Type:
+  <select name="type_id">
+    <% for type in @types %>
+    <option value="<%= type.id %>"><%= type.name %></option>
+    <% end %>
+  </select>
+</label>
 
 <label>
   Manufacturer:

@@ -21,7 +21,7 @@
 <% for club in @clubs %>
   <tr>
 <td><%= club.name %></td>
-<td><%= club.type %></td>
+<td><%= Type.type_name(club.type_id) %></td>
 <td><%= Manufacturer.manufacturer_name(club.manufacturer_id) %></td>
 <td><%= club.quantity %></td>
 <td><%= club.level_indicator %></td>
@@ -31,6 +31,5 @@
 <td><a href="/clubs/<%= club.id %>">Click Here</a></td>
   </tr>
 
-<!-- <p> <%= club.name %> <%= club.type %> <%= Manufacturer.manufacturer_name(club.manufacturer_id) %> <%= club.quantity %> <%= club.level_indicator %> </p> -->
 <% end %>
 </table>

@@ -3,12 +3,12 @@ require_relative('../db/sql_runner')
 class Club
 
   attr_reader :id
-  attr_accessor :name, :type, :manufacturer_id, :quantity, :stock_level, :buy_price, :sell_price, :mark_up
+  attr_accessor :name, :type_id, :manufacturer_id, :quantity, :stock_level, :buy_price, :sell_price, :mark_up
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @type = options['type']
+    @type_id = options['type_id'].to_i
     @manufacturer_id = options['manufacturer_id'].to_i
     @quantity = options['quantity'].to_i
     @stock_level = options['stock_level']
@@ -35,7 +35,7 @@ class Club
     sql = "INSERT INTO clubs
     (
     name,
-    type,
+    type_id,
     manufacturer_id,
     quantity,
     stock_level,
@@ -48,7 +48,7 @@ class Club
     $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING id"
-    values = [@name, @type, @manufacturer_id, @quantity, @stock_level, @buy_price, @sell_price, @mark_up]
+    values = [@name, @type_id, @manufacturer_id, @quantity, @stock_level, @buy_price, @sell_price, @mark_up]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
@@ -57,7 +57,7 @@ class Club
     sql = "UPDATE clubs SET
     (
     name,
-    type,
+    type_id,
     manufacturer_id,
     quantity,
     buy_price,
@@ -68,7 +68,7 @@ class Club
     $1, $2, $3, $4, $5, $6
     )
     WHERE id = $7"
-    values = [@name, @type, @manufacturer_id, @quantity, @buy_price, @sell_price, @id]
+    values = [@name, @type_id, @manufacturer_id, @quantity, @buy_price, @sell_price, @id]
     SqlRunner.run(sql, values)
   end
 
