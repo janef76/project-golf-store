@@ -12,5 +12,8 @@ name VARCHAR(255),
 type VARCHAR(255),
 manufacturer_id INT4 REFERENCES manufacturers(id) ON DELETE CASCADE,
 quantity INT4,
-stock_level VARCHAR(255)
+stock_level VARCHAR(255),
+buy_price INT4,
+sell_price INT4,
+mark_up INT4 
 );

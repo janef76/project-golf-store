@@ -12,6 +12,9 @@
     <th>Manufacturer Name</th>
     <th>Quantity</th>
     <th>Stock Indicator</th>
+    <th>Buy Price</th>
+    <th>Sell Price</th>
+    <th>Mark Up</th>
     <th>Delete</th>
   </tr>
 
@@ -22,6 +25,9 @@
 <td><%= Manufacturer.manufacturer_name(club.manufacturer_id) %></td>
 <td><%= club.quantity %></td>
 <td><%= club.level_indicator %></td>
+<td><%= club.buy_price %></td>
+<td><%= club.sell_price %></td>
+<td><%= club.mark_up %></td>
 <td><a href="/clubs/<%= club.id %>">Click Here</a></td>
   </tr>
 

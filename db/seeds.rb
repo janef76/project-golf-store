@@ -34,7 +34,10 @@ club1 = Club.new({
   "type" => "driver",
   "manufacturer_id" => manu1.id,
   "quantity" => 10,
-  "stock_level" => "med"
+  "stock_level" => "med",
+  "buy_price" => 100,
+  "sell_price" => 150,
+  "mark_up" => 50
   })
 
 club1.save()
@@ -44,7 +47,10 @@ club2 = Club.new({
   "type" => "driver",
   "manufacturer_id" => manu1.id,
   "quantity" => 20,
-  "stock_level" => "high"
+  "stock_level" => "high",
+  "buy_price" => 200,
+  "sell_price" => 350,
+  "mark_up" => 100
   })
 
 club2.save()

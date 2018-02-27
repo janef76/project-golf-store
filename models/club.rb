@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Club
 
   attr_reader :id
-  attr_accessor :name, :type, :manufacturer_id, :quantity, :stock_level
+  attr_accessor :name, :type, :manufacturer_id, :quantity, :stock_level, :buy_price, :sell_price, :mark_up
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -12,6 +12,9 @@ class Club
     @manufacturer_id = options['manufacturer_id'].to_i
     @quantity = options['quantity'].to_i
     @stock_level = options['stock_level']
+    @buy_price = options['buy_price'].to_i
+    @sell_price = options['sell_price'].to_i
+    @mark_up = options['mark_up'].to_i
   end
 
   def level_indicator()
@@ -23,6 +26,9 @@ class Club
       return "high"
     end
   end
+  # 
+  # def mark_up_value()
+  # end
 
   def save()
     sql = "INSERT INTO clubs
@@ -31,14 +37,17 @@ class Club
     type,
     manufacturer_id,
     quantity,
-    stock_level
+    stock_level,
+    buy_price,
+    sell_price,
+    mark_up
     )
     VALUES
     (
-    $1, $2, $3, $4, $5
+    $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING id"
-    values = [@name, @type, @manufacturer_id, @quantity, @stock_level]
+    values = [@name, @type, @manufacturer_id, @quantity, @stock_level, @buy_price, @sell_price, @mark_up]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
@@ -50,14 +59,17 @@ class Club
     type,
     manufacturer_id,
     quantity,
-    stock_level
+    stock_level,
+    buy_price,
+    sell_price,
+    mark_up
     )
     =
     (
-    $1, $2, $3, $4, $5, $6
+    $1, $2, $3, $4, $5, $6, $7, $8, $9
     )
-    WHERE id = $7"
-    values = [@name, @type, @manufacturer_id, @quantity, @stock_level, @id]
+    WHERE id = $10"
+    values = [@name, @type, @manufacturer_id, @quantity, @stock_level, @buy_price, @sell_price, @mark_up, @id]
     SqlRunner.run(sql, values)
   end
 
