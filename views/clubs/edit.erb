@@ -1,6 +1,24 @@
+<p>Club: <%= @clubs.name %> </p>
 
+<form method="post" action="/clubs/<%= @clubs.id %>/delete">
+<input type="submit" value="Delete Club"/>
+</form>
 <form method="post" action="/clubs/<%= @clubs.id %>/edit">
 
+  <label for="name-field">Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name-field"
+  value="<%= @clubs.name %>"
+  />
+
+  <input
+  type="text"
+  name="type"
+  id="type-field"
+  value="<%= @clubs.type %>"
+  />
 
   <input
   type="number"

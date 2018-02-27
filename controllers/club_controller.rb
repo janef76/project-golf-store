@@ -23,6 +23,7 @@ end
 
 get '/clubs/:id' do
   @clubs = Club.find(params[:id])
+  @manufacturers = Manufacturer.all()
   erb(:"clubs/show")
 end
 

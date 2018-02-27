@@ -56,16 +56,19 @@ class Club
   def update()
     sql = "UPDATE clubs SET
     (
+    name,
+    type,
+    manufacturer_id,
     quantity,
     buy_price,
     sell_price
     )
     =
     (
-    $1, $2, $3
+    $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $4"
-    values = [@quantity, @buy_price, @sell_price, @id]
+    WHERE id = $7"
+    values = [@name, @type, @manufacturer_id, @quantity, @buy_price, @sell_price, @id]
     SqlRunner.run(sql, values)
   end
 
