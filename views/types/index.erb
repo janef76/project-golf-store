@@ -1,0 +1,20 @@
+<h2>Club Types</h2>
+
+<li>
+  <a href="/types/new">Add new club type</a>
+</li>
+
+<table>
+  <tr>
+    <th>Club Type</th>
+    <th>Update/Delete</th>
+  </tr>
+
+<% for type in @types %>
+<tr>
+<td><%= type.name %> </td>
+<td><a href="/types/<%= type.id %>">Click Here</a></td>
+</tr>
+
+<% end %>
+</table>

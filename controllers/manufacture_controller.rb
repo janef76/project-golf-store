@@ -21,7 +21,7 @@ end
 
 get '/manufacturers/:id' do
   @manufacturers = Manufacturer.find( params[:id] )
-  erb(:"/manufacturers/show")
+  erb(:"/manufacturers/edit")
 end
 
 get '/manufacturers/:id/edit' do

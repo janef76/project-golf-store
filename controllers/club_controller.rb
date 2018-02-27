@@ -24,7 +24,7 @@ end
 get '/clubs/:id' do
   @clubs = Club.find(params[:id])
   @manufacturers = Manufacturer.all()
-  erb(:"clubs/show")
+  erb(:"clubs/edit")
 end
 
 get '/clubs/:id/edit' do

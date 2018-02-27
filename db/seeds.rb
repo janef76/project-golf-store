@@ -1,9 +1,11 @@
 require_relative('../models/club')
 require_relative('../models/manufacturer')
+require_relative('../models/type')
 require('pry-byebug')
 
 Club.delete_all
 Manufacturer.delete_all
+Type.delete_all
 
 manu1 = Manufacturer.new({
     "name" => "Taylormade"
@@ -55,6 +57,23 @@ club2 = Club.new({
 
 club2.save()
 
+type1 = Type.new({
+    "name" => "driver"
+})
+
+type1.save()
+
+type2 = Type.new({
+    "name" => "fairway woods"
+})
+
+type2.save()
+
+type3 = Type.new({
+    "name" => "irons"
+})
+
+type3.save()
 
 binding.pry
 nil

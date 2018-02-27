@@ -1,0 +1,15 @@
+<p>Club Type: <%= @types.name %></p>
+
+<form method="post" action="/types/<%= @types.id %>/delete">
+  <input type="submit" value="Delete Club Type"/>
+</form>
+<p></p>
+<form method="post" action="/types/<%= @types.id %>/edit">
+  <input
+  type="text"
+  name="name"
+  id="name-field"
+  value="<%= @types.name %>"
+  />
+  <input type='submit' value="Edit Club Type">
+  </form>

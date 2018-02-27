@@ -3,6 +3,8 @@
 <form method="post" action="/clubs/<%= @clubs.id %>/delete">
 <input type="submit" value="Delete Club"/>
 </form>
+<p></p>
+
 <form method="post" action="/clubs/<%= @clubs.id %>/edit">
 
   <label for="name-field">Name:</label>
@@ -13,6 +15,7 @@
   value="<%= @clubs.name %>"
   />
 
+  <label for="type-field">Type:</label>
   <input
   type="text"
   name="type"
@@ -20,6 +23,16 @@
   value="<%= @clubs.type %>"
   />
 
+  <label>
+    Manufacturer:
+    <select name="manufacturer_id">
+      <% for manufacturer in @manufacturers %>
+      <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label for="quantity-field">Quantity:</label>
   <input
   type="number"
   name="quantity"
@@ -27,6 +40,7 @@
   value="<%= @clubs.quantity %>"
   />
 
+  <label for="buy_price-field">Buy Price:</label>
   <input
   type="number"
   name="buy_price"
@@ -34,6 +48,7 @@
   value="<%= @clubs.buy_price %>"
   />
 
+  <label for="sell_price-field">Sell Price:</label>
   <input
   type="number"
   name="sell_price"
@@ -41,5 +56,5 @@
   value="<%= @clubs.sell_price %>"
   />
 
-  <input type="submit" value="Update Quantity">
+  <input type="submit" value="Update">
 </form>
