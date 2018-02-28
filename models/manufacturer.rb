@@ -41,7 +41,8 @@ class Manufacturer
   end
 
   def self.all()
-    sql = "SELECT * FROM manufacturers"
+    sql = "SELECT * FROM manufacturers
+    ORDER BY manufacturers"
     manufacturer_data = SqlRunner.run(sql)
     makes = map_items(manufacturer_data)
     return makes

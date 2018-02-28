@@ -41,7 +41,8 @@ class Type
   end
 
   def self.all()
-    sql = "SELECT * FROM types"
+    sql = "SELECT * FROM types
+    ORDER BY types"
     type_data = SqlRunner.run(sql)
     types = map_items(type_data)
     return types
