@@ -1,9 +1,5 @@
 <h2>Club Types</h2>
 
-<li>
-  <a href="/types/new">Add new club type</a>
-</li>
-
 <table>
   <tr>
     <th>Club Type</th>
@@ -13,8 +9,10 @@
 <% for type in @types %>
 <tr>
 <td><%= type.name %> </td>
-<td><a href="/types/<%= type.id %>">Click Here</a></td>
+<td><a href="/types/<%= type.id %>" class="update_buttons">Click Here</a></td>
 </tr>
 
 <% end %>
 </table>
+
+<a href="/types/new" class="add_buttons">Add new club type</a>

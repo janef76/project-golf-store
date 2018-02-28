@@ -2,13 +2,16 @@
 
 <form action="/clubs" method="post">
 
+  <p>
   <label for="name-field">Name:</label>
   <input
   type="text"
   name="name"
   value=""
   />
+  </p>
 
+<p>
 <label>
   Type:
   <select name="type_id">
@@ -17,7 +20,9 @@
     <% end %>
   </select>
 </label>
+</p>
 
+<p>
 <label>
   Manufacturer:
   <select name="manufacturer_id">
@@ -26,28 +31,35 @@
     <% end %>
   </select>
 </label>
+</p>
 
+<p>
 <label for="quantity-field">Quantity:</label>
   <input
   type="number"
   name="quantity"
   value=""
 />
+</p>
 
+<p>
 <label for="buy_price-field">Buy Price:</label>
   <input
   type="number"
   name="buy_price"
   value=""
 />
+</p>
 
+<p>
 <label for="sell_price-field">Sell Price:</label>
 <input
   type="number"
   name="sell_price"
   value=""
 />
+</p>
 
-<input type="submit" value="Save">
+<input type="submit" value="Save" class="save_button">
 
 </form>

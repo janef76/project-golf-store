@@ -79,7 +79,8 @@ class Club
   end
 
   def self.all()
-    sql = "SELECT * FROM clubs"
+    sql = "SELECT * FROM clubs
+    ORDER BY clubs"
     club_data = SqlRunner.run(sql)
     clubs = map_items(club_data)
     return clubs

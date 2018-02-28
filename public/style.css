@@ -1,3 +1,154 @@
 h1 {
-  color: blue;
+  color: #444547;
+  text-transform: uppercase;
+  font-family: ariel, sans-serif;
+  text-align: center;
+}
+
+h2, h3, h4 {
+  color: #444547;
+  text-transform: uppercase;
+  font-family: ariel, sans-serif;
+  text-align: center;
+  /* padding-top: 10px; */
+}
+
+body {
+  background-color: #d3dae8;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background-color: black;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: ariel, sans-serif;
+    text-transform: uppercase;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+table {
+    width: auto;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+  text-align: left;
+  height: auto;
+  padding: 10px;
+  font-family: ariel, sans-serif;
+}
+
+table, th, td {
+  border: 1px solid grey;
+  font-family: ariel, sans-serif;
+}
+
+th {
+  background-color: darkgrey;
+  color: black;
+}
+
+tr:hover {
+  background-color: grey;
+  color: white;
+}
+
+form {
+  font-family: ariel, sans-serif;
+  text-transform: uppercase;
+}
+
+.save_button {
+  background-color: green;
+  font-size: 14px;
+  padding: 10px 17px 10px;
+  color: white;
+}
+
+.save_button:hover {
+  color: black;
+}
+
+.update_form {
+  background-color: orange;
+  font-size: 14px;
+  padding: 10px 17px 10px;
+  color: white;
+}
+
+.update_form:hover {
+  color: black;
+}
+
+.delete_form {
+  background-color: red;
+  font-size: 14px;
+  padding: 10px 17px 10px;
+  color: white;
+}
+
+.delete_form:hover {
+  color: black;
+}
+
+.add_buttons {
+  background-color: green;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 14px;
+  font-family: ariel, sans-serif;
+  margin-top: 10px;
+  float: right;
+  margin-right: 50px;
+}
+
+.add_buttons:hover {
+  color: black;
+}
+
+.update_buttons {
+  background-color: #e88522;
+  border: none;
+  color: white;
+  padding: 15px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: ariel, sans-serif;
+}
+
+.update_buttons:hover {
+  color: black;
+}
+
+.home_image {
+  padding-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }

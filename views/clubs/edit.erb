@@ -1,33 +1,39 @@
 <p>Club: <%= @clubs.name %> </p>
 
+</p>
 <form method="post" action="/clubs/<%= @clubs.id %>/delete">
-<input type="submit" value="Delete Club"/>
+<input type="submit" value="Delete Club" class="delete_form">
 </form>
-<p></p>
+</p>
 
 <form method="post" action="/clubs/<%= @clubs.id %>/edit">
 
-  <label for="name-field">Name:</label>
+<p>
+<label for="name-field">Name:</label>
   <input
   type="text"
   name="name"
   id="name-field"
   value="<%= @clubs.name %>"
-  />
+/>
+</P>
 
-  <label>
-    Type:
-    <select name="type_id">
-      <% for type in @types %>
-      <% if @clubs.type_id == type.id %>
-      <option value="<%= type.id %>" selected="<%= type.id %>"><%= type.name %></option>
-      <% else %>
-      <option value="<%= type.id %>"><%= type.name %></option>
-      <% end %>
-      <% end %>
-    </select>
-  </label>
+<p>
+<label>
+  Type:
+  <select name="type_id">
+    <% for type in @types %>
+    <% if @clubs.type_id == type.id %>
+    <option value="<%= type.id %>" selected="<%= type.id %>"><%= type.name %></option>
+    <% else %>
+    <option value="<%= type.id %>"><%= type.name %></option>
+    <% end %>
+    <% end %>
+  </select>
+</label>
+</p>
 
+<p>
   <label>
     Manufacturer:
     <select name="manufacturer_id">
@@ -40,7 +46,9 @@
       <% end %>
     </select>
   </label>
+</p>
 
+<p>
   <label for="quantity-field">Quantity:</label>
   <input
   type="number"
@@ -48,7 +56,9 @@
   id="quantity-field"
   value="<%= @clubs.quantity %>"
   />
+</p>
 
+<p>
   <label for="buy_price-field">Buy Price:</label>
   <input
   type="number"
@@ -56,7 +66,9 @@
   id="buy_price-field"
   value="<%= @clubs.buy_price %>"
   />
+</p>
 
+<p>
   <label for="sell_price-field">Sell Price:</label>
   <input
   type="number"
@@ -64,6 +76,7 @@
   id="sell_price-field"
   value="<%= @clubs.sell_price %>"
   />
+</p>
 
-  <input type="submit" value="Update">
+<input type="submit" value="Update" class="update_form">
 </form>

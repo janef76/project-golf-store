@@ -1,9 +1,5 @@
+
 <h2>All Clubs</h2>
-
-
-<li>
-  <a href="/clubs/new">Add new Club</a>
-</li>
 
 <table>
   <tr>
@@ -15,7 +11,7 @@
     <th>Buy Price</th>
     <th>Sell Price</th>
     <th>Mark Up</th>
-    <th>Delete</th>
+    <th>Update/Delete</th>
   </tr>
 
 <% for club in @clubs %>
@@ -28,8 +24,10 @@
 <td><%= club.buy_price %></td>
 <td><%= club.sell_price %></td>
 <td><%= club.mark_up_value %></td>
-<td><a href="/clubs/<%= club.id %>">Click Here</a></td>
+<td><a href="/clubs/<%= club.id %>" class="update_buttons">Click Here</a></td>
   </tr>
 
 <% end %>
 </table>
+
+<a href="/clubs/new" class="add_buttons">Add new Club</a>
