@@ -19,7 +19,11 @@
     Type:
     <select name="type_id">
       <% for type in @types %>
+      <% if @clubs.type_id == type.id %>
+      <option value="<%= type.id %>" selected="<%= type.id %>"><%= type.name %></option>
+      <% else %>
       <option value="<%= type.id %>"><%= type.name %></option>
+      <% end %>
       <% end %>
     </select>
   </label>
@@ -28,7 +32,11 @@
     Manufacturer:
     <select name="manufacturer_id">
       <% for manufacturer in @manufacturers %>
+      <% if @clubs.manufacturer_id == manufacturer.id %>
+      <option value="<%= manufacturer.id %>" selected="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+      <% else %>
       <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+      <% end %>
       <% end %>
     </select>
   </label>
