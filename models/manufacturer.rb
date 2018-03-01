@@ -12,11 +12,11 @@ class Manufacturer
   def save()
     sql = "INSERT INTO manufacturers
     (
-    name
+      name
     )
     VALUES
     (
-    $1
+      $1
     )
     RETURNING id"
     values = [@name]

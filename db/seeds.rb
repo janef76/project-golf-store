@@ -120,7 +120,7 @@ club4 = Club.new({
 club4.save()
 
 club5 = Club.new({
-  "name" => "V forged 60 loft",
+  "name" => "V forged 60",
   "type_id" => type5.id,
   "manufacturer_id" => manu3.id,
   "quantity" => 21,

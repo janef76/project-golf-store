@@ -6,13 +6,13 @@
     <th>Update/Delete</th>
   </tr>
 
-<% for type in @types %>
-<tr>
-<td><%= type.name %> </td>
-<td><a href="/types/<%= type.id %>" class="update_buttons">Click Here</a></td>
-</tr>
+  <% for type in @types %>
+  <tr>
+    <td><%= type.name %> </td>
+    <td><a href="/types/<%= type.id %>" class="update_buttons">Click Here</a></td>
+  </tr>
 
-<% end %>
+  <% end %>
 </table>
 
 <a href="/types/new" class="add_buttons">Add new club type</a>

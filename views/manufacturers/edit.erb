@@ -1,18 +1,23 @@
-<p>Manufacturer: <%= @manufacturers.name %></p>
-
 <form method="post" action="/manufacturers/<%= @manufacturers.id %>/delete">
-  <input type="submit" value="Delete Manufacturer" class="delete_form">
-</form>
+  <fieldset>
+    <legend>Delete Manufacturer:</legend>
+    <p>Manufacturer: <%= @manufacturers.name %></p>
+    <input type="submit" value="Delete Manufacturer" class="delete_form">
+  </fieldset>
+</form><br>
 
-<p>
 <form method="post" action="/manufacturers/<%= @manufacturers.id %>/edit">
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  value="<%= @manufacturers.name %>"
-  />
-</p>
+  <fieldset>
+    <legend>Update Manufacturer's Name:</legend><br>
+    <label for="name-field">Name:</label>
+    <input
+    type="text"
+    name="name"
+    id="name-field"
+    value="<%= @manufacturers.name %>"
+    />
+    <br><br>
 
-<input type='submit' value="Edit Manufacturer" class="update_form">
+    <input type='submit' value="Edit Manufacturer" class="update_form">
+  </fieldset>
 </form>

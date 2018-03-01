@@ -1,82 +1,79 @@
-<p>Club: <%= @clubs.name %> </p>
-
-</p>
 <form method="post" action="/clubs/<%= @clubs.id %>/delete">
-<input type="submit" value="Delete Club" class="delete_form">
+  <fieldset>
+    <legend>Delete Club:</legend>
+    <p>Club: <%= @clubs.name %> </p>
+    <input type="submit" value="Delete Club" class="delete_form">
+  </fieldset>
 </form>
-</p>
+<br>
 
 <form method="post" action="/clubs/<%= @clubs.id %>/edit">
+  <fieldset>
+    <legend>Update Club Information:</legend>
+    <label for="name-field">Name:</label>
+    <input
+    type="text"
+    name="name"
+    id="name-field"
+    value="<%= @clubs.name %>"
+    />
+    <br><br>
 
-<p>
-<label for="name-field">Name:</label>
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  value="<%= @clubs.name %>"
-/>
-</P>
+    <label>
+      Type:
+      <select name="type_id"><br>
+        <% for type in @types %>
+        <% if @clubs.type_id == type.id %>
+        <option value="<%= type.id %>" selected="<%= type.id %>"><%= type.name %></option>
+        <% else %>
+        <option value="<%= type.id %>"><%= type.name %></option>
+        <% end %>
+        <% end %>
+      </select><br>
+    </label>
+    <br>
 
-<p>
-<label>
-  Type:
-  <select name="type_id">
-    <% for type in @types %>
-    <% if @clubs.type_id == type.id %>
-    <option value="<%= type.id %>" selected="<%= type.id %>"><%= type.name %></option>
-    <% else %>
-    <option value="<%= type.id %>"><%= type.name %></option>
-    <% end %>
-    <% end %>
-  </select>
-</label>
-</p>
+    <label>
+      Manufacturer:
+      <select name="manufacturer_id">
+        <% for manufacturer in @manufacturers %>
+        <% if @clubs.manufacturer_id == manufacturer.id %>
+        <option value="<%= manufacturer.id %>" selected="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+        <% else %>
+        <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+        <% end %>
+        <% end %>
+      </select>
+    </label>
+    <br><br>
 
-<p>
-  <label>
-    Manufacturer:
-    <select name="manufacturer_id">
-      <% for manufacturer in @manufacturers %>
-      <% if @clubs.manufacturer_id == manufacturer.id %>
-      <option value="<%= manufacturer.id %>" selected="<%= manufacturer.id %>"><%= manufacturer.name %></option>
-      <% else %>
-      <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
-      <% end %>
-      <% end %>
-    </select>
-  </label>
-</p>
+    <label for="quantity-field">Quantity:</label>
+    <input
+    type="number"
+    name="quantity"
+    id="quantity-field"
+    value="<%= @clubs.quantity %>"
+    />
+    <br><br>
 
-<p>
-  <label for="quantity-field">Quantity:</label>
-  <input
-  type="number"
-  name="quantity"
-  id="quantity-field"
-  value="<%= @clubs.quantity %>"
-  />
-</p>
+    <label for="buy_price-field">Buy Price:</label>
+    <input
+    type="number"
+    name="buy_price"
+    id="buy_price-field"
+    value="<%= @clubs.buy_price %>"
+    />
+    <br><br>
 
-<p>
-  <label for="buy_price-field">Buy Price:</label>
-  <input
-  type="number"
-  name="buy_price"
-  id="buy_price-field"
-  value="<%= @clubs.buy_price %>"
-  />
-</p>
+    <label for="sell_price-field">Sell Price:</label>
+    <input
+    type="number"
+    name="sell_price"
+    id="sell_price-field"
+    value="<%= @clubs.sell_price %>"
+    />
+    <br><br>
 
-<p>
-  <label for="sell_price-field">Sell Price:</label>
-  <input
-  type="number"
-  name="sell_price"
-  id="sell_price-field"
-  value="<%= @clubs.sell_price %>"
-  />
-</p>
-
-<input type="submit" value="Update" class="update_form">
+    <input type="submit" value="Update" class="update_form">
+  </fieldset>
 </form>

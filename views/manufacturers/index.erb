@@ -6,13 +6,13 @@
     <th>Update/Delete</th>
   </tr>
 
-<% for manufacturer in @manufacturers %>
-<tr>
-<td><%= manufacturer.name %> </td>
-<td><a href="/manufacturers/<%= manufacturer.id %>" class="update_buttons">Click Here</a></td>
-</tr>
+  <% for manufacturer in @manufacturers %>
+  <tr>
+    <td><%= manufacturer.name %> </td>
+    <td><a href="/manufacturers/<%= manufacturer.id %>" class="update_buttons">Click Here</a></td>
+  </tr>
 
-<% end %>
+  <% end %>
 </table>
 
 <a href="/manufacturers/new" class="add_buttons">Add new Manufacturer</a>

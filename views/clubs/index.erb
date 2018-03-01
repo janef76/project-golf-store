@@ -14,20 +14,20 @@
     <th>Update/Delete</th>
   </tr>
 
-<% for club in @clubs %>
+  <% for club in @clubs %>
   <tr>
-<td><%= club.name %></td>
-<td><%= Type.type_name(club.type_id) %></td>
-<td><%= Manufacturer.manufacturer_name(club.manufacturer_id) %></td>
-<td><%= club.quantity %></td>
-<td><%= club.level_indicator %></td>
-<td><%= club.buy_price %></td>
-<td><%= club.sell_price %></td>
-<td><%= club.mark_up_value %></td>
-<td><a href="/clubs/<%= club.id %>" class="update_buttons">Click Here</a></td>
+    <td><%= club.name %></td>
+    <td><%= Type.type_name(club.type_id) %></td>
+    <td><%= Manufacturer.manufacturer_name(club.manufacturer_id) %></td>
+    <td><%= club.quantity %></td>
+    <td><%= club.level_indicator %></td>
+    <td><%= club.buy_price %></td>
+    <td><%= club.sell_price %></td>
+    <td><%= club.mark_up_value %></td>
+    <td><a href="/clubs/<%= club.id %>" class="update_buttons">Click Here</a></td>
   </tr>
 
-<% end %>
+  <% end %>
 </table>
 
 <a href="/clubs/new" class="add_buttons">Add new Club</a>

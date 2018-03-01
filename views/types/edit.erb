@@ -1,18 +1,24 @@
-<p>Club Type: <%= @types.name %></p>
-
 <form method="post" action="/types/<%= @types.id %>/delete">
-  <input type="submit" value="Delete" class="delete_form">
-</form>
+  <fieldset>
+    <legend>Club types:</legend>
+    <p>Club Type: <%= @types.name %></p>
 
-<p>
+    <input type="submit" value="Delete" class="delete_form">
+  </fieldset>
+</form><br>
+
 <form method="post" action="/types/<%= @types.id %>/edit">
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  value="<%= @types.name %>"
-  />
-</p>
+  <fieldset>
+    <legend>Update Club Type:</legend><br>
+    <label for="name-field">Name:</label>
+    <input
+    type="text"
+    name="name"
+    id="name-field"
+    value="<%= @types.name %>"
+    />
+    <br><br>
 
-<input type='submit' value="Edit Club Type" class="update_form">
+    <input type='submit' value="Edit Club Type" class="update_form">
+  </fieldset>
 </form>

@@ -34,18 +34,18 @@ class Club
   def save()
     sql = "INSERT INTO clubs
     (
-    name,
-    type_id,
-    manufacturer_id,
-    quantity,
-    stock_level,
-    buy_price,
-    sell_price,
-    mark_up
+      name,
+      type_id,
+      manufacturer_id,
+      quantity,
+      stock_level,
+      buy_price,
+      sell_price,
+      mark_up
     )
     VALUES
     (
-    $1, $2, $3, $4, $5, $6, $7, $8
+      $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING id"
     values = [@name, @type_id, @manufacturer_id, @quantity, @stock_level, @buy_price, @sell_price, @mark_up]
@@ -56,16 +56,16 @@ class Club
   def update()
     sql = "UPDATE clubs SET
     (
-    name,
-    type_id,
-    manufacturer_id,
-    quantity,
-    buy_price,
-    sell_price
+      name,
+      type_id,
+      manufacturer_id,
+      quantity,
+      buy_price,
+      sell_price
     )
     =
     (
-    $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6
     )
     WHERE id = $7"
     values = [@name, @type_id, @manufacturer_id, @quantity, @buy_price, @sell_price, @id]

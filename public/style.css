@@ -92,10 +92,11 @@ form {
 
 .save_button:hover {
   color: black;
+  background-color: #14912d;
 }
 
 .update_form {
-  background-color: orange;
+  background-color: #fc9002;
   font-size: 14px;
   padding: 10px 17px 10px;
   color: white;
@@ -103,6 +104,7 @@ form {
 
 .update_form:hover {
   color: black;
+  background-color: orange;
 }
 
 .delete_form {
@@ -114,6 +116,7 @@ form {
 
 .delete_form:hover {
   color: black;
+  background-color: #f2483a;
 }
 
 .add_buttons {
@@ -133,10 +136,11 @@ form {
 
 .add_buttons:hover {
   color: black;
+  background-color: #14912d;
 }
 
 .update_buttons {
-  background-color: #e88522;
+  background-color: #fc9002;
   border: none;
   color: white;
   padding: 15px 12px;
@@ -149,6 +153,7 @@ form {
 
 .update_buttons:hover {
   color: black;
+  background-color: orange;
 }
 
 .home_image {

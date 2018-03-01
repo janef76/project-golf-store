@@ -1,65 +1,59 @@
-<h3>Add new Club's details</h3>
-
 <form action="/clubs" method="post">
+  <fieldset>
+    <legend>Add New Club:</legend>
 
-  <p>
-  <label for="name-field">Name:</label>
-  <input
-  type="text"
-  name="name"
-  value=""
-  />
-  </p>
+    <label for="name-field">Name:</label>
+    <input
+    type="text"
+    name="name"
+    value=""
+    />
+    <br><br>
 
-<p>
-<label>
-  Type:
-  <select name="type_id">
-    <% for type in @types %>
-    <option value="<%= type.id %>"><%= type.name %></option>
-    <% end %>
-  </select>
-</label>
-</p>
+    <label>
+      Type:
+      <select name="type_id">
+        <% for type in @types %>
+        <option value="<%= type.id %>"><%= type.name %></option>
+        <% end %>
+      </select>
+    </label>
+    <br><br>
 
-<p>
-<label>
-  Manufacturer:
-  <select name="manufacturer_id">
-    <% for manufacturer in @manufacturers %>
-    <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
-    <% end %>
-  </select>
-</label>
-</p>
+    <label>
+      Manufacturer:
+      <select name="manufacturer_id">
+        <% for manufacturer in @manufacturers %>
+        <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+        <% end %>
+      </select>
+    </label>
+    <br><br>
 
-<p>
-<label for="quantity-field">Quantity:</label>
-  <input
-  type="number"
-  name="quantity"
-  value=""
-/>
-</p>
+    <label for="quantity-field">Quantity:</label>
+    <input
+    type="number"
+    name="quantity"
+    value=""
+    />
+    <br><br>
 
-<p>
-<label for="buy_price-field">Buy Price:</label>
-  <input
-  type="number"
-  name="buy_price"
-  value=""
-/>
-</p>
+    <label for="buy_price-field">Buy Price:</label>
+    <input
+    type="number"
+    name="buy_price"
+    value=""
+    />
+    <br><br>
 
-<p>
-<label for="sell_price-field">Sell Price:</label>
-<input
-  type="number"
-  name="sell_price"
-  value=""
-/>
-</p>
+    <label for="sell_price-field">Sell Price:</label>
+    <input
+    type="number"
+    name="sell_price"
+    value=""
+    />
+    <br><br>
 
-<input type="submit" value="Save" class="save_button">
-
+    <input type="submit" value="Save" class="save_button">
+  </fieldset>
 </form>
